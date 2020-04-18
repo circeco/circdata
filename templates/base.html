@@ -6,12 +6,53 @@
     
     </head>
     <body>
-        <h1>Outside!</h1>
-        {% block content %}
-        {% endblock %}
+
+        <header>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="{{url_for('get_circular_initiative')}}" class="right brand-logo">circeco.org</a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="{{url_for('get_circular_initiative')}}">Search</a></li>
+                        <li><a href="{{url_for('get_circular_initiative')}}">View</a></li>
+                        <li><a href="{{url_for('get_circular_initiative')}}">Add</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="{{url_for('get_circular_initiative')}}">Search</a></li>
+                        <li><a href="{{url_for('get_circular_initiative')}}">view</a></li>
+                        <li><a href="{{url_for('get_circular_initiative')}}">Add</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+            <h1>Cover section</h1>
+        </section>
+
+        <section>
+            <h1>Search section</h1>
+        </section>
+
+        <section>
+            <h1>View section</h1>
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <section>
+            <h1>Add section</h1>
+        </section>
+
 
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".button-collapse").sideNav();
+            });
+        </script>
+    
     </body>
 </html>
