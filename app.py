@@ -30,6 +30,21 @@ def get_circular_initiative():
     return render_template("view.html", circular_initiative=mongo.db.circular_initiative.find())
 
 
+@app.route('/')
+@app.route('/add_initittive')
+def add_initiative():
+    return render_template('add.html', circular_initiative=mongo.db.circular_initiative.find())
+
+
+@app.route('/insert_initiative', methods=['POST'])
+def insert_initiative():
+    circular_initiative =  mongo.db.circular_initiative
+    circular_initiative.insert_one(request.form.to_dict())
+    return redirect(url_for('get_circular_initiative'))
+
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT','8000')),
