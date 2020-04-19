@@ -23,35 +23,11 @@ def home():
                             initiatie_object=mongo.db.initiatie_object.find().sort("circular_initiative", 1),
                             initiatie_description=mongo.db.initiatie_description.find().sort("circular_initiative", 1),)
 
-# Circular Inititative page
-@app.route("/view", methods=["GET", "POST"])
-def all_animals():
-    if request.method == "POST":
-        searchInitiative = request.form.get("search_circular_inititatve")
-        search_results = mongo.db.animals.find({"$text": {"$search": searchInitiative}}).sort("initiative_name", 1)
-        if search_results.count() > 0:
-            diets = mongo.db.diets.find()
-            return render_template("view.html", 
-                                    initiative_name=list(search_results),
-                                    initiatie_type=list(initiative_type), results_found=True)
-        else:
-            circular_initiative = mongo.db.circular_initiative.find().sort([("initiative_type", 1), 
-                                                    ("initiative_name", 1)])
-            diets = mongo.db.diets.find()
-            return render_template("view.html", circular_initiative=list(circular_initiative),
-                                    initiatie_type=list(initiative_type), results_found=False)
-    else:
-        circular_initiative = mongo.db.circular_initiative.find().sort([("initiative_type", 1), 
-                                                ("initiative_name", 1)])
-        initiative_type = mongo.db.initiative_type.find()
-        return render_template("view.html", circular_initiative=list(circular_initiative),
-                                initiative_type=list(initiative_type), results_found=False)
-
 
 @app.route('/')
 @app.route('/get_circular_initiative')
 def get_circular_initiative():
-    return render_template("index.html", circular_initiative=mongo.db.circular_initiative.find())
+    return render_template("view.html", circular_initiative=mongo.db.circular_initiative.find())
 
 
 if __name__ == '__main__':
