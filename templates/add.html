@@ -1,43 +1,68 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Add Curcular Initiative</h1>
+<h1>Add Circular Initiative</h1>
 <div class="row">
 
     <form action="{{ url_for('insert_initiative') }}" method="POST"  class="col s12">
 
         <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field col s12 m6">
                 <i class="material-icons prefix">all_inclusive</i>
                 <input id="initiative_name" name="initiative_name" type="text">
                 <label for="icon_prefix">Initiative Name</label>
             </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">poll</i>
-                    <select id="category" name="category_name">
-                        <option value="" disabled selected>Choose Category</option>
-                        {% for circular_initiative in circular_initiative %}
-                            <option value="{{circular_initiative.initiative_type}}">{{circular_initiative.initiative_type}}</option>
-                        {% endfor %}
-                    </select>
-                    <label>Initiative Type</label>
-                </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">poll</i>
+                <select id="categories" name="initiative_type">
+                    <option value="" disabled selected>Choose Category</option>
+                    {% for categories in categories %}
+                        <option value="{{categories.initiative_type}}">{{categories.initiative_type}}</option>
+                    {% endfor %}
+                </select>
+                <label>Initiative Type</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <p>
+                    <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Red</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input name="group1" type="radio" />
+                        <span>Yellow</span>
+                    </label>
+                </p>
             </div>
         </div>
 
         <div class="row">        
             <div class="input-field col s6">
                 <i class="material-icons prefix">subject</i>
-                <textarea name="task_description" id="task_description" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Initiative Description</label>
+                <textarea name="initiative_description" id="initiative_description" class="materialize-textarea"></textarea>
+                <label for="icon_telephone">Description</label>
             </div>
         </div>
 
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">all_inclusive</i>
+                <input id="weblink" name="weblink" type="text">
+                <label for="icon_prefix">website</label>
+            </div>
+        </div>
 
         <div class="row">
             <button class="btn waves-effect waves-light" type="submit" name="action">Add Initiative
                 <i class="material-icons right">playlist_add</i>
-             </button>
+            </button>
         </div>
 
     </form>
