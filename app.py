@@ -35,7 +35,8 @@ def get_circular_initiative():
 def add_initiative():
     return render_template('add.html', 
                             circular_initiative=mongo.db.circular_initiative.find(),
-                            categories=mongo.db.categories.find())
+                            categories=mongo.db.categories.find(), 
+                            goods_services=mongo.db.goods_services.find())
 
 
 @app.route('/insert_initiative', methods=['POST'])

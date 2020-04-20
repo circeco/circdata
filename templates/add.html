@@ -13,21 +13,6 @@
             </div>
         </div>
 
-
-
-        <div class="row">
-            <div class="input-field col s12 m6">
-                <i class="material-icons prefix">poll</i>
-                <select id="categories" name="initiative_type" multiple>
-                    <option value="" disabled selected>Choose Category</option>
-                    {% for categories in categories %}
-                        <option value="{{categories.initiative_type}}">{{categories.initiative_type}}</option>
-                    {% endfor %}
-                </select>
-                <label>Initiative Type</label>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col s12 m6">
             <h5>Initiative Type</h5>
@@ -41,8 +26,21 @@
                 <label for="r3">Repair</label>
 
                 {% for categories in categories %}
-                    <input value="{{categories.initiative_type}}">{{categories.initiative_type}}</option>
+                    <input value="{{ categories.initiative_type }}">{{ categories.initiative_type }}</option>
                 {% endfor %}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m6">
+                <i class="material-icons prefix">poll</i>
+                <select id="goods_services" name="initiative_object" multiple>
+                    <option value="" disabled selected>Choose</option>
+                    {% for goods_services in goods_services %}
+                        <option value="{{goods_services.initiative_object}}">{{goods_services.initiative_object}}</option>
+                    {% endfor %}
+                </select>
+                <label>What can you find there?</label>
             </div>
         </div>
 
