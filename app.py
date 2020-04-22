@@ -33,6 +33,7 @@ def get_circular_initiative():
 @app.route('/')
 @app.route('/add_initiative')
 def add_initiative():
+
     return render_template('add.html', 
                             circular_initiative=mongo.db.circular_initiative.find(),
                             categories=mongo.db.categories.find(), 
@@ -41,8 +42,16 @@ def add_initiative():
 
 @app.route('/insert_initiative', methods=['POST'])
 def insert_initiative():
+    submit = {
+        "initiative_name" : request.form.get("initiative_name"),
+        "initiative_description" : request.form.get("initiative_description"),
+        "initiative_type" : request.form.get("initiative_type"),
+        "initiative_object" : request.form.getlist("initiative_object"),
+        "weblink" : request.form.get("weblink")
+    }
     circular_initiative =  mongo.db.circular_initiative
-    circular_initiative.insert_one(request.form.to_dict())
+    circular_initiative.insert_one(submit)
+
     return redirect(url_for('get_circular_initiative'))
 
 
