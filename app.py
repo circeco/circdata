@@ -54,6 +54,11 @@ def insert_initiative():
 
     return redirect(url_for('get_circular_initiative'))
 
+# delete initiative from database
+@app.route("/delete_initiative/<circular_initiative_id>")
+def delete_initiative(circular_initiative_id):
+    mongo.db.circular_initiative.remove({"_id": ObjectId(circular_initiative_id)})
+    return redirect(url_for("get_circular_initiative"))
 
 
 
