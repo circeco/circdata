@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Edit Circular Initiative</h1>
+
+
+<div class="row">
+    <div class="col-12">
+        <form action="{{ url_for('update_initiative', initiative_id=initiative._id) }}" method="POST">
+            <div class="form-group">
+
+                <!--Initiative Name-->
+                <div class="row my-4">
+                    <div class="input-field col s12 m6">
+                        <label for="initiative_name">Initiattive Name:</label>
+                        <input class="form-control border border-dark" type="text" name="initiative_name" id="initiative_name" value="{{circular_initiative.initiative_name}}">
+                    </div>
+                </div>
+
+                <!--Initiative Type-->
+                <div class="row my-4">
+                    <div class="col-sm-12 col-md-3 offset-md-2 text-md-right col-lg-2 offset-lg-3">
+                        <label for="initiative_type">Initiative Type:</label>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-4">
+                        <select class="form-control border border-dark" name="initiative_type" id="initiative_type">
+                            <option value="" disabled selected>Choose Initiative Type</option>
+                            {% for cate in categories %}
+                                {% if categories.initiative_type == categories.initiative_type %}
+                                    <option value="{{ categories.initiative_type }}" selected>{{ categories.initiative_type }}</option>
+                                {% else %}
+                                    <option value="{{ categories.initiative_type }}">{{ categories.initiative_type }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <!--Initiative Object-->
+                <div class="row my-4">
+                    <div class="col-sm-12 col-md-3 offset-md-2 text-md-right col-lg-2 offset-lg-3">
+                        <label for="initiative_object">Initiative Type:</label>
+                    </div>
+                    <div class="col-sm-12 col-md-5 col-lg-4">
+                        <select class="form-control border border-dark" name="initiative_object" id="initiative_object">
+                            <option value="" disabled selected>Choose Initiative Type</option>
+                            {% for goods in goods_services %}
+                                {% if goods_services.initiative_object == goods_services.initiative_object %}
+                                    <option value="{{ goods_services.initiative_object }}" selected>{{ goods_services.initiative_object }}</option>
+                                {% else %}
+                                    <option value="{{ goods_services.initiative_object }}">{{ goods_services.initiative_object }}</option>
+                                {% endif %}
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+
+                <!--Initiative Description-->
+                <div class="row my-4">
+                    <div class="input-field col s12 m6">
+                        <label for="initiative_description">Initiattive Description:</label>
+                        <input class="form-control border border-dark" type="text" name="initiative_description" id="initiative_description" value="{{circular_initiative.initiative_description}}">
+                    </div>
+                </div>
+
+                <!--weblink-->
+                <div class="row my-4">
+                    <div class="input-field col s12 m6">
+                        <label for="weblink">Initiattive Name:</label>
+                        <input class="form-control border border-dark" type="text" name="weblink" id="weblink" value="{{circular_initiative.weblink}}">
+                    </div>
+                </div>
+
+            </div>
+            <!--Submit Button-->
+            <div class="row my-3">
+                <div class="col-12 text-center">
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}

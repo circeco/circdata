@@ -54,6 +54,31 @@ def insert_initiative():
 
     return redirect(url_for('get_circular_initiative'))
 
+
+# editing an initiative
+@app.route("/edit/<initiative_id>")
+def edit(initiative_id):
+    the_initiative = mongo.db.circular_initiative.find_one({"_id": ObjectId(initiative_id)})
+    all_initiative_types = mongo.db.categories.find()
+    all_goods = mongo.db.goods_services.find()
+    return render_template("editanimal.html", initiative=the_initiative, 
+                            types=all_initiative_types, goods=all_goods)
+
+# updating initiative data
+@app.route('/update_initiative/<initiative_id>', methods=["POST"])
+def update_initiative(initiative_id):
+    circular_initiative = mongo.db.circular_initiative
+    circular_initiative.update({'_id': ObjectId(initiative_id)},
+    {
+        'initiative_name': request.form.get('initiative_name'),
+        'initiative_type': request.form.get('initiative_type'),
+        'initiative_description': request.form.get('initiative_description'),
+        'initiative_object': request.form.getlist('initiative_object'),
+        'weblink': request.form.get('weblink'),
+    })
+    return redirect(url_for('get_circular_initiative'))
+
+
 # delete initiative from database
 @app.route("/delete_initiative/<circular_initiative_id>")
 def delete_initiative(circular_initiative_id):
