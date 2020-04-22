@@ -15,18 +15,20 @@
 
         <div class="row">
             <div class="col s12 m6">
-            <h5>Initiative Type</h5>
+            <h5>What can you do there?</h5>
+            <p>
                 <input name="initiative_type" type="radio" id="r1" value="Reuse">
                 <label for="r1">Reuse</label>
-
+            </p>
+            <p>
                 <input name="initiative_type" type="radio" id="r2" value="Recycle">
                 <label for="r2">Recycle</label>
-
+            </p>
+            <p>
                 <input name="initiative_type" type="radio" id="r3" value="Repair">
                 <label for="r3">Repair</label>
-
+            </p>
                 {% for re in categories %}
-                    <input value="{{ re.initiative_type }}">{{ re.initiative_type }}</option>
                 {% endfor %}
             </div>
         </div>
