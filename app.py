@@ -27,13 +27,39 @@ def home():
 @app.route('/')
 @app.route('/get_circular_initiative')
 def get_circular_initiative():
-    return render_template("view.html", circular_initiative=mongo.db.circular_initiative.find())
+    results = mongo.db.circular_initiative.find()
+    return render_template("view.html", circular_initiative=results)
+
+
+# Searching box
+@app.route('/search/', methods=['GET', 'POST'])
+def search(): 
+    keyword = request.form.get('search')
+    query = ( { "$text": { "$search": keyword } } )
+    results = mongo.db.circular_initiative.find(query)
+    return render_template("view.html", circular_initiative=results, count=results.count())
+
+
+
+@app.route("/results/<result>")
+def results(result):
+    return render_template("view.html", circular_initiative=result)
+        
+
+
+# find initiative by object
+@app.route("/initiative_by_object", methods=["GET"])
+def initiative_by_object():
+    a = mongo.db.circular_initiative.find({"initiative_object": {"$regex": '/A/i'}})
+    mongo.db.goods_services.find()
+    return render_template("view.html",
+                            circular_initiative=mongo.db.circular_initiative.find().sort([
+                                ("initiative_object", 1)]))
 
 
 @app.route('/')
 @app.route('/add_initiative')
 def add_initiative():
-
     return render_template('add.html', 
                             circular_initiative=mongo.db.circular_initiative.find(),
                             categories=mongo.db.categories.find(), 
@@ -85,6 +111,9 @@ def update_initiative(initiative_id):
 def delete_initiative(circular_initiative_id):
     mongo.db.circular_initiative.remove({"_id": ObjectId(circular_initiative_id)})
     return redirect(url_for("get_circular_initiative"))
+
+
+
 
 
 

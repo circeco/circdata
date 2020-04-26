@@ -1,31 +1,42 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    {% for circular_initiative in circular_initiative %}
+
+    <!--Scrollspy containing initiative type-->
+    <div id="initiative-type-list" class="list-group text-center">
+        <a href="{{ url_for('initiative_by_object') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark text-white" id="card">Show All</a>
+        {% if results_found == False %}
+            <button type="button" class="waves-effect waves-light btn" id="music">Music</button>
+            <button type="button" class="waves-effect waves-light btn" id="clothes">Clothes</button>
+            <button type="button" class="waves-effect waves-light btn" id="bikes">Bikes</button>
+            <button type="button" class="waves-effect waves-light btn" id="books">Books</button>
+            <button type="button" class="waves-effect waves-light btn" id="home">Home</button>
+            <button type="button" class="waves-effect waves-light btn" id="electronics">Electronics</button>
+        {% endif %}
+    </div>
+
+    {% for circular in circular_initiative %}
     <div class="card container">
-        <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="images/office.jpg">
-        </div>
         <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{{circular_initiative.initiative_name}}<i class="material-icons right">more_vert</i></span>
-            <p>{{circular_initiative.initiative_description}}</p>
-            <p><a href="#">{{circular_initiative.weblink}}</a></p>
+            <span class="card-title activator grey-text text-darken-4">{{circular.initiative_name}}<i class="material-icons right">more_vert</i></span>
+            <p>{{circular.initiative_description}}</p>
+            <p><a href="#">{{circular.weblink}}</a></p>
         </div>
         <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{circular_initiative.initiative_name}}<i class="material-icons right">close</i></span>
-            <a href="{{ url_for('edit_initiative', initiative_id=circular_initiative._id) }}" class="waves-effect waves-light btn">Edit</a>
+            <span class="card-title grey-text text-darken-4">{{circular.initiative_name}}<i class="material-icons right">close</i></span>
+            <a href="{{ url_for('edit_initiative', initiative_id=circular._id) }}" class="waves-effect waves-light btn">Edit</a>
 
             <!-- Modal Trigger -->
-            <a class="waves-effect waves-light btn modal-trigger" href="#modal{{circular_initiative._id}}">Delete Modal</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal{{circular._id}}">Delete</a>
         </div>
         <!-- Modal Structure -->
-        <div id="modal{{circular_initiative._id}}" class="modal modal-close">
+        <div id="modal{{circular._id}}" class="modal modal-close">
             <div class="modal-content">
-                <h5>Are you sure to delete <span>{{circular_initiative.initiative_name}}</span> as a Circular Initiative?</h5>
+                <h5>Are you sure to delete <span>{{circular.initiative_name}}</span> as a Circular Initiative?</h5>
                 <p>Please note that this action would be irreversible and info for this initiative would be lost!</p>
             </div>
             <div class="modal-footer">
-                <a href="{{ url_for('delete_initiative', circular_initiative_id=circular_initiative._id) }}" class="modal-close waves-effect waves-green btn-flat">YES, I am sure</a>
+                <a href="{{ url_for('delete_initiative', circular_initiative_id=circular._id) }}" class="modal-close waves-effect waves-green btn-flat">YES, I am sure</a>
             </div>
         </div>
     </div>

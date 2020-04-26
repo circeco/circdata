@@ -17,12 +17,15 @@
         <!--Search input-->
         <div class="row pt-3 pb-3 text-center">
             <div class="col">
-                <form action="{{ url_for('get_circular_initiative') }}" method="POST">
-                    <input type="search" name="search_animal" id="search_animal" placeholder="Find an animal here...">
-                    <button type="submit" class="btn btn-danger" id="search_btn">Search</button>
+                <form action="{{ url_for('search') }}" method="POST">
+                    <input id="searchTerm" name="search" placeholder="Find circular initiatives here..." required>
+                    <button type="submit" class="btn btn-danger" for="search" id="search_btn">Search</button>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                 </form>
             </div>
         </div>
+
+
         <!--Jumbotron section containing information about website-->
         <div class="row">
             <div class="col-12">
