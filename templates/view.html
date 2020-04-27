@@ -2,10 +2,10 @@
 {% block content %}
 
 
-    <!--Scrollspy containing initiative type-->
+    <!--buttons containing initiative type-->
     <div id="initiative-type-list" class="list-group text-center">
         <a href="{{ url_for('initiative_by_object') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark text-white" id="card">Show All</a>
-        {% if results_found == False %}
+        {% if not results_found %}
             <button type="button" class="waves-effect waves-light btn" id="music">Music</button>
             <button type="button" class="waves-effect waves-light btn" id="clothes">Clothes</button>
             <button type="button" class="waves-effect waves-light btn" id="bikes">Bikes</button>
@@ -18,9 +18,11 @@
     {% for circular in circular_initiative %}
     <div class="card container">
         <div class="card-content">
+            <p>{{circular.initiative_type}}</p>
             <span class="card-title activator grey-text text-darken-4">{{circular.initiative_name}}<i class="material-icons right">more_vert</i></span>
+            <p>{{circular.initiative_object}}</p>
             <p>{{circular.initiative_description}}</p>
-            <p><a href="#">{{circular.weblink}}</a></p>
+            <p><a href="{{circular.weblink}}">{{circular.weblink}}</a></p>
         </div>
         <div class="card-reveal">
             <span class="card-title grey-text text-darken-4">{{circular.initiative_name}}<i class="material-icons right">close</i></span>
