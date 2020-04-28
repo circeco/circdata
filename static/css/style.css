@@ -1,0 +1,84 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
+
+
+body {
+    margin: 0;
+    font-family: 'Khand', sans-serif;
+    font-size: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    border-left: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF5252;
+    border-radius: 0px;
+}
+
+nav ul a, nav .brand-logo {
+    color: black;
+    max-height: 64px;
+    font-size: 20px;
+}
+
+nav .brand-logo {
+    font-family: 'Bebas Neue', cursive; 
+    margin-right: 18px;
+}
+
+#logo {
+    height: 45px;
+    width: 45px;
+    margin: 8px;
+    transition: 0.4s;
+    border-radius: .25rem;
+}
+
+#logo:hover {
+    transform: scale(0.9, 0.9);
+}
+
+
+.underline {
+    margin: 0;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+h1#title {
+    font-family: 'Bebas Neue', cursive;
+    margin: 250px 0 0; 
+}
+
+#search-box {
+    margin-bottom: 180px;
+}
+
+#searchTerm {
+    width: 300px;
+}
+
+button#search-btn {
+    font-size: 20px;
+    padding: 0 10px 10px;
+}
+
+#red-wood {
+    background: url("../img/red-wood.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-attachment: fixed;
+}

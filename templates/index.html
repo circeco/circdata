@@ -1,64 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="row text-center pt-4 pb-1">
-    <div class="col">
-        <h2>Circular Initiative</h2>
+<div class="row text-center">
+    <div class="center-align col s12">
+        <h1 id="title" class="center-align underline">Circular Ecosystem</h1>
+        <p>On this web app you can search, view, add and edit circular initiatives</p>
     </div>
 </div>
-<div class="row text-center pb-2">
+<div id="search-box" class="row text-center pb-2 center-align">
     <div class="col-12">
-        <div class="row">
-            <div class="col">
-                <h5>Search for a Circular Initiative</h5>
-                <i class="fas fa-arrow-circle-down fa-lg"></i>
-            </div>
-        </div>
         <!--Search input-->
         <div class="row pt-3 pb-3 text-center">
-            <div class="col">
-                <form action="{{ url_for('search') }}" method="POST">
-                    <input id="searchTerm" name="search" placeholder="Find circular initiatives here..." required>
-                    <button type="submit" class="btn btn-danger" for="search" id="search_btn">Search</button>
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <div class="center-align">
+                <form action="{{ url_for('search') }}" method="POST" class="center-align">
+                    <input id="searchTerm" name="search" placeholder="Search for a Circular Initiative here..." required>
+                    <button type="submit" class="btn btn-danger cyan darken-4" for="search" id="search_btn">Search &nbsp; &nbsp;<i id="search-button" class="material-icons">search</i></button>
                 </form>
             </div>
-        </div>
-
-
-        <!--Jumbotron section containing information about website-->
-        <div class="row">
-            <div class="col-12">
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                        <h4 class="text-center">On this website, you can:</h4>
-                        <br>
-                        <div class="text-left">
-                            <ul>
-                                <li>
-                                    <h5>Find a range of circular initiatives, from the <strong>Reusing</strong> to the <small>Reparing.</small></h5>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <h5>Add new initiative to share with others.</h5>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <h5>Edit info about a circular initiative.</h5>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <h5>Delete and remove completely Circular Initiative.</h5>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </div>        
     </div>
 </div>
 

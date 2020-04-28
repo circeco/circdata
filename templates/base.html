@@ -3,28 +3,34 @@
     <head>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
+
     </head>
     <body>
 
         <header>
-            <nav>
-                <div class="nav-wrapper">
-                    <a href="{{url_for('home')}}" class="right brand-logo">circeco.org</a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="{{url_for('home')}}">Search</a></li>
-                        <li><a href="{{url_for('get_circular_initiative')}}">View</a></li>
-                        <li><a href="{{url_for('add_initiative')}}">Add</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a class="sidenav-close" href="#!"><i class="material-icons">X</i></a></li>
-                        <li><a href="{{url_for('home')}}">Search</a></li>
-                        <li><a href="{{url_for('get_circular_initiative')}}">View</a></li>
-                        <li><a href="{{url_for('add_initiative')}}">Add</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <div class="navbar-fixed">
+                <nav>
+                    <div class="nav-wrapper white">
+                        <a href="{{url_for('home')}}" class="right brand-logo">circeco.org</a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul id="nav-mobile" class="left ">
+                            <li><a><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}"></a></li>
+                            <li><a href="{{url_for('home')}}">Search</a></li>
+                            <li><a href="{{url_for('get_circular_initiative')}}">View</a></li>
+                            <li><a href="{{url_for('add_initiative')}}">Add</a></li>
+                            <li><a>| &nbsp; &nbsp; Circular Initiative</a></li>
+                        </ul>
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a class="sidenav-close" href="#!"><i class="material-icons"></i></a></li>
+                            <li><a href="{{ url_for('static', filename='img/navbar_logo.jpg')}}" class="logo"></a></li>
+                            <li><a href="{{url_for('home')}}">Search</a></li>
+                            <li><a href="{{url_for('get_circular_initiative')}}">View</a></li>
+                            <li><a href="{{url_for('add_initiative')}}">Add</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </header>
 
 
@@ -45,6 +51,10 @@
 
         </section>
 
+        <footer>
+            <div id="red-wood">
+            </div>
+        </footer>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
