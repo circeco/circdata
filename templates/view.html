@@ -18,28 +18,26 @@
     {% for circular in circular_initiative %}
         <div class="card">
             <div class="card-content">
-                <!-- <p id="initiative-type">{{circular.initiative_type}}</p> -->
-                {% if circular.initiative_type == 'Reuse' %}
-                    <p class="red">{{ circular.initiative_type }}</p>
-                {% elif circular.initiative_type == 'Recycle' %}
-                    <p class="blue">{{ circular.initiative_type }}</p>
-                {% elif circular.initiative_type == 'Repair' %}
-                    <p class="green">{{ circular.initiative_type }}</p>
-                {% endif %}
-                <!-- {% for initiative_type in circular.initiative_type %} -->
-                        <!-- <p class="initiative_type_{{ initiative_type|lower }}">{{ initiative_type }}</p> -->
-                <!-- {% endfor %} -->
                 <span class="card-title activator grey-text text-darken-4 underline">{{circular.initiative_name}}<i class="material-icons right">more_vert</i></span>
-                <!-- <p>{{circular.initiative_object}}</p> -->
-                <p>
+                <!--------------different color for different type-->
+                <div style="padding: 0">
+                {% if circular.initiative_type == 'Reuse' %}
+                    <p id="initiative-type" class="cyan darken-4">{{ circular.initiative_type }}</p>
+                {% elif circular.initiative_type == 'Repair' %}
+                    <p id="initiative-type" class="cyan darken-3">{{ circular.initiative_type }}</p>
+                {% elif circular.initiative_type == 'Recycle' %}
+                    <p id="initiative-type" class="cyan darken-2">{{ circular.initiative_type }}</p>
+                {% endif %}
+                </div>
+                <p id="init-description">{{circular.initiative_description}}</p>
+                <div id="init-object">
                     {% for initiative_object in circular.initiative_object %}
                         <div class="chip">
                             <img src="{{ url_for('static', filename='img/'+initiative_object|lower+'.png') }}" alt="{{ initiative_object }}">
                             {{ initiative_object }}
                         </div>
                     {% endfor %}
-                </p>
-                <p id="init-description">{{circular.initiative_description}}</p>
+                </div>
                 <p><a  id="weblink" href="{{circular.weblink}}">{{circular.weblink}}</a></p>
             </div>
             <div class="card-reveal">
