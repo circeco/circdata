@@ -5,6 +5,8 @@ from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
 
+DBS_NAME = "circdata"
+
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'circdata'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
@@ -12,25 +14,15 @@ app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 mongo = PyMongo(app)
 
 
-DBS_NAME = "circdata"
-
 
 # Homepage
 @app.route("/")
-@app.route("/home")
 def home():
     return render_template("index.html", 
                             initiative_name=mongo.db.initiative_name.find().sort("circular_initiative", 1),
                             initiatie_type=mongo.db.initiatie_type.find().sort("circular_initiative", 1),
                             initiatie_object=mongo.db.initiatie_object.find().sort("circular_initiative", 1),
                             initiatie_description=mongo.db.initiatie_description.find().sort("circular_initiative", 1),)
-
-
-@app.route('/')
-@app.route('/get_circular_initiative')
-def get_circular_initiative():
-    results = mongo.db.circular_initiative.find()
-    return render_template("view.html", circular_initiative=results)
 
 
 # Searching box
@@ -42,12 +34,26 @@ def search():
     return render_template("view.html", circular_initiative=results, count=results.count())
 
 
+# sort by object 
+@app.route('/sort/<keyword>')
+def sort(keyword): 
+    query = ( { "$text": { "$search": keyword } } )
+    results = mongo.db.circular_initiative.find(query)
+    return render_template("view.html", circular_initiative=results, count=results.count())
 
+
+# display results of the search
 @app.route("/results/<result>")
 def results(result):
     return render_template("view.html", circular_initiative=result)
-        
 
+
+# view circular initiatives
+@app.route('/get_circular_initiative')
+def get_circular_initiative():
+    results = mongo.db.circular_initiative.find()
+    return render_template("view.html", circular_initiative=results)
+        
 
 # find initiative by object
 @app.route("/initiative_by_object", methods=["GET"])
@@ -59,7 +65,7 @@ def initiative_by_object():
                                 ("initiative_object", 1)]))
 
 
-@app.route('/')
+# add initiative form 
 @app.route('/add_initiative')
 def add_initiative():
     return render_template('add.html', 
@@ -68,6 +74,7 @@ def add_initiative():
                             goods_services=mongo.db.goods_services.find())
 
 
+# post a new initiative
 @app.route('/insert_initiative', methods=['POST'])
 def insert_initiative():
     submit = {
@@ -83,6 +90,7 @@ def insert_initiative():
     return redirect(url_for('get_circular_initiative'))
 
 
+
 # editing an initiative
 @app.route("/edit_initiative/<initiative_id>")
 def edit_initiative(initiative_id):
@@ -91,6 +99,7 @@ def edit_initiative(initiative_id):
     all_goods_services = mongo.db.goods_services.find()
     return render_template("edit.html", circular_initiative=the_initiative, 
                             categories=all_initiative_types, goods_services=all_goods_services)
+
 
 
 # updating initiative data
@@ -106,6 +115,7 @@ def update_initiative(initiative_id):
         'weblink': request.form.get('weblink'),
     })
     return redirect(url_for('get_circular_initiative'))
+
 
 
 # delete initiative from database

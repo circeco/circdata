@@ -4,15 +4,13 @@
 
     <!--buttons containing initiative type-->
     <div id="initiative-type-list" class="list-group text-center">
-        <a href="{{ url_for('initiative_by_object') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="show-all"><strong>Show All<strong></strong></a>
-        {% if not results_found %}
-            <button type="button" class="waves-effect waves-light btn" id="music">Music</button>
-            <button type="button" class="waves-effect waves-light btn" id="clothes">Clothes</button>
-            <button type="button" class="waves-effect waves-light btn" id="bikes">Bikes</button>
-            <button type="button" class="waves-effect waves-light btn" id="books">Books</button>
-            <button type="button" class="waves-effect waves-light btn" id="home">Home</button>
-            <button type="button" class="waves-effect waves-light btn" id="electronics">Electronics</button>
-        {% endif %}
+        <a href="{{ url_for('initiative_by_object') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="show-all"><strong>Show All</strong></a>
+        <a href="{{ url_for('sort', keyword='music') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Music</strong></a>
+        <a href="{{ url_for('sort', keyword='books') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Books</strong></a>
+        <a href="{{ url_for('sort', keyword='clothes') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Clothes</strong></a>
+        <a href="{{ url_for('sort', keyword='bikes') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Bikes</strong></a>
+        <a href="{{ url_for('sort', keyword='home') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Home</strong></a>
+        <a href="{{ url_for('sort', keyword='electronics') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Electronics</strong></a>
     </div>
 
 
