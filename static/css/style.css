@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
 
-
+/*---------------------Base.html*/
 body {
     margin: 0;
     font-family: 'Khand', sans-serif;
@@ -24,6 +24,7 @@ nav ul a, nav .brand-logo {
     color: black;
     max-height: 64px;
     font-size: 20px;
+    font-family: 'Bebas Neue', cursive; 
 }
 
 nav .brand-logo {
@@ -53,6 +54,9 @@ nav .brand-logo {
     text-decoration-skip: ink;
 }
 
+
+/*-----------------Index.html*/
+
 h1#title {
     font-family: 'Bebas Neue', cursive;
     margin: 250px 0 0; 
@@ -81,4 +85,51 @@ button#search-btn {
     overflow: hidden;
     margin: 0;
     background-attachment: fixed;
+    top: 100%;
+}
+
+
+/*-------------------View.html*/
+
+#initiative-type-list {
+    margin: 50px 0 50px;
+    text-align: center;
+}
+
+#music, #clothes, #bikes, #electronics, #books, #home, #show-all {
+    background-color: white;
+    color: #FF5252;
+}
+
+.container {
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 300px;
+    height: 500px;
+    margin: 5% auto;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', cursive;
+    padding: 20% 0;
+}
+
+#weblink {
+    bottom: 0;
+    padding: 5%;
+    position: absolute;
+    color: teal;
+}
+
+#initiative-type {
+    text-align: right;
+}
+
+#init-description {
+    font-size: 16px;
+    
 }
