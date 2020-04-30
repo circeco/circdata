@@ -162,6 +162,10 @@ button#search-btn {
     color: teal;
 }
 
+#edit-btns {
+    background-color: #FF5252;
+}
+
 /*-------------Add and Edit form page----*/
 
 h1#add-init {
@@ -172,7 +176,7 @@ h1#add-init {
 
 p#add-init {
     text-align: center;
-    margin: 0 100px 100px;
+    margin: 0 20% 100px;
 }
 
 
@@ -191,4 +195,33 @@ p#add-init {
     margin: 80px;
 }
 
+/*----------------footer--*/
+
+.social-links a {
+    padding:0;
+    margin: 0%;
+    float: right;
+}
+
+.social-links li a i:hover {
+    background: #FF5252;
+    color: #fafafa;
+}
+
+.social-links li a i {
+    width: 32px;
+    height: 32px;
+    padding: 12px 0;
+    margin-right:5px;
+    font-size: 20px;
+    line-height: 8px;
+    text-align: center;
+    color: #FF5252;
+    background: #fafafa;
+    transition: all 0.35s ease-in-out;
+    -moz-transition: all 0.35s ease-in-out;
+    -webkit-transition: all 0.35s ease-in-out;
+    -o-transition: all 0.35s ease-in-out;
+    box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.19);
+}
 
