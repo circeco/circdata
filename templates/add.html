@@ -1,75 +1,76 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Add Circular Initiative</h1>
+<h1 id="add-init" class="underline">+ Add Circular Initiative</h1>
+<p id="add-init">Do you know a place or people that have principles of circular economy as their core values for their business or activity? Contribute to build a circular ecosystem!</p>
 
-<div class="row">
+<form id="form-style" action="{{ url_for('insert_initiative') }}" method="POST"  class="col s12">
 
-    <form action="{{ url_for('insert_initiative') }}" method="POST"  class="col s12">
-
-        <div class="row">
-            <div class="input-field col s12 m6">
-                <i class="material-icons prefix">all_inclusive</i>
-                <input id="initiative_name" name="initiative_name" type="text">
-                <label for="icon_prefix">Initiative Name</label>
-            </div>
+    <div class="row">
+        <div class="input-field">
+            <i class="material-icons prefix">all_inclusive</i>
+            <input id="initiative_name" name="initiative_name" type="text" data-length="30" required>
+            <label for="icon_prefix">Initiative Name</label>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="col s12 m6">
-            <h5>What can you do there?</h5>
-            <p>
-                <input name="initiative_type" type="radio" id="r1" value="Reuse">
-                <label for="r1">Reuse</label>
-            </p>
-            <p>
-                <input name="initiative_type" type="radio" id="r2" value="Recycle">
-                <label for="r2">Recycle</label>
-            </p>
-            <p>
-                <input name="initiative_type" type="radio" id="r3" value="Repair">
-                <label for="r3">Repair</label>
-            </p>
-            </div>
+    <div class="row">
+        <h5 class="col s6">What can you do there?</h5>
+        <div class="col s6">
+            <input name="initiative_type" type="radio" id="r1" value="Reuse">
+            <label for="r1">Reuse</label>
+        
+            <input name="initiative_type" type="radio" id="r2" value="Recycle">
+            <label for="r2">Recycle</label>
+        
+            <input name="initiative_type" type="radio" id="r3" value="Repair">
+            <label for="r3">Repair</label>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s12 m6">
-                <i class="material-icons prefix">poll</i>
-                <select id="goods_services" name="initiative_object" multiple>
-                    <option value="" disabled selected>Choose</option>
-                    {% for goods in goods_services[0].initiative_object %}
-                        <option value="{{goods}}">{{goods}}</option>
-                    {% endfor %}
-                </select>
-                <label>What can you find there?</label>
-            </div>
+    <div class="row">
+        <h5 class="col s6">What can you find there?</h5>
+        <div class="input-field col s6">
+            <select id="goods_services" name="initiative_object" multiple>
+                <option value="" disabled selected>Choose</option>
+                {% for goods in goods_services[0].initiative_object %}
+                    <option value="{{goods}}" required>{{goods}}</option>
+                {% endfor %}
+            </select>
         </div>
+    </div>
+    <div class="row">
+        <img id="form-img" src="{{ url_for('static', filename='img/bikes.png') }}" alt="{{ initiative_object }}">
+        <img id="form-img" src="{{ url_for('static', filename='img/books.png') }}" alt="{{ initiative_object }}">
+        <img id="form-img" src="{{ url_for('static', filename='img/clothes.png') }}" alt="{{ initiative_object }}">
+        <img id="form-img" src="{{ url_for('static', filename='img/home.png') }}" alt="{{ initiative_object }}">
+        <img id="form-img" src="{{ url_for('static', filename='img/music.png') }}" alt="{{ initiative_object }}">
+        <img id="form-img" src="{{ url_for('static', filename='img/electronics.png') }}" alt="{{ initiative_object }}">
+    </div>
 
-        <div class="row">        
-            <div class="input-field col s6">
-                <i class="material-icons prefix">subject</i>
-                <textarea name="initiative_description" id="initiative_description" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Description</label>
-            </div>
+    <div class="row">        
+        <div class="input-field">
+            <i class="material-icons prefix">subject</i>
+            <textarea name="initiative_description" id="initiative_description" class="materialize-textarea" data-length="120" required></textarea>
+            <label for="icon_telephone">Description</label>
         </div>
+    </div>
 
-        <div class="row">
-            <div class="input-field col s12 m6">
-                <i class="material-icons prefix">all_inclusive</i>
-                <input id="weblink" name="weblink" type="text">
-                <label for="icon_prefix">website</label>
-            </div>
+    <div class="row">
+        <div class="input-field">
+            <i class="material-icons prefix">all_inclusive</i>
+            <input id="weblink" placeholder="www.circeco.org" name="weblink" type="text" data-length="50" required>
+            <label for="icon_prefix">website</label>
         </div>
+    </div>
 
-        <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="from_user" value="">Add Initiative
-                <i class="material-icons right">playlist_add</i>
-            </button>
-        </div>
+    <div class="row">
+        <button class="btn waves-effect waves-light" type="submit" name="from_user" value="">Add Initiative
+            <i class="material-icons right">playlist_add</i>
+        </button>
+    </div>
 
-    </form>
+</form>
 
-</div>
 
 
 {% endblock %}

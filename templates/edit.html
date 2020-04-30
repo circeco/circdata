@@ -1,83 +1,84 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Edit Circular Initiative</h1>
+<h1 id="add-init" class="underline">Edit Circular Initiative</h1>
 
+<form id="form-style" action="{{ url_for('update_initiative', initiative_id=circular_initiative._id) }}" method="POST">
 
-<div class="row">
-    <div class="col-12">
-        <form action="{{ url_for('update_initiative', initiative_id=circular_initiative._id) }}" method="POST">
-            <div class="form-group">
-
-                <!--Initiative Name-->
-                <div class="row my-4">
-                    <div class="input-field col s12 m6">
-                        <label for="initiative_name">Initiattive Name:</label>
-                        <input class="form-control border border-dark" type="text" name="initiative_name" id="initiative_name" value="{{circular_initiative.initiative_name}}">
-                    </div>
-                </div>
-
-                <!--Initiative Type-->
-                <div class="row my-4">
-                    <div class="col-sm-12 col-md-3 offset-md-2 text-md-right col-lg-2 offset-lg-3">
-                        <label for="initiative_type">Initiative Type:</label>
-                    </div>
-                    <div class="col-sm-12 col-md-5 col-lg-4">
-                        <select class="form-control border border-dark" name="initiative_type" id="initiative_type">
-                            <option value="" disabled selected>Choose Initiative Type</option>
-                            {% for type in categories %}
-                                {% if circular_initiative.initiative_type == type.initiative_type %}
-                                    <option value="{{ type.initiative_type }}" selected>{{ type.initiative_type }}</option>
-                                {% else %}
-                                    <option value="{{ type.initiative_type }}">{{ type.initiative_type }}</option>
-                                {% endif %}
-                            {% endfor %}
-                        </select>
-                    </div>
-                </div>
-
-                <!--Initiative Object-->
-                <div class="row">
-                    <div class="input-field col s12 m6">
-                        <i class="material-icons prefix">poll</i>
-                        <select id="goods_services" name="initiative_object" multiple>
-                            <option value="" disabled selected>Choose</option>
-                            {% for goods in goods_services[0].initiative_object %}
-                                <option value="{{goods}}">{{goods}}</option>
-                            {% endfor %}
-                        </select>
-                        <label>What can you find there?</label>
-                    </div>
-                </div>
-
-                <!--Initiative Description-->
-                <div class="row my-4">
-                    <div class="input-field col s12 m6">
-                        <label for="initiative_description">Initiattive Description:</label>
-                        <input class="form-control border border-dark" type="text" name="initiative_description" id="initiative_description" value="{{circular_initiative.initiative_description}}">
-                    </div>
-                </div>
-
-                <!--weblink-->
-                <div class="row my-4">
-                    <div class="input-field col s12 m6">
-                        <label for="weblink">Website:</label>
-                        <input class="form-control border border-dark" type="text" name="weblink" id="weblink" value="{{circular_initiative.weblink}}">
-                    </div>
-                </div>
-
+        <!--Initiative Name-->
+        <div class="row">
+            <div class="input-field">
+                <label for="initiative_name">Initiattive Name:</label>
+                <input class="form-control border border-dark" type="text" name="initiative_name" id="initiative_name" value="{{circular_initiative.initiative_name}}">
             </div>
-            <!--Submit Button-->
-            <div class="row my-3">
-                <div class="col-12 text-center">
-                    <input class="btn btn-success" type="submit" value="Submit">
-                </div>
-            </div>
+        </div>
 
-        </form>
+        <!--Initiative Type-->
+        <div class="row">
+            <div class="input-field">
+                <select class="form-control border border-dark" name="initiative_type" id="initiative_type">
+                    <option value="" disabled selected>Choose Initiative Type</option>
+                    {% for type in categories %}
+                        {% if circular_initiative.initiative_type == type.initiative_type %}
+                            <option value="{{ type.initiative_type }}" selected>{{ type.initiative_type }}</option>
+                        {% else %}
+                            <option value="{{ type.initiative_type }}">{{ type.initiative_type }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <label for="initiative_type">Initiative Type:</label>
+            </div>
+        </div>
+
+        <!--Initiative Object-->
+        <div class="row">
+            <div class="input-field">
+                <select id="goods_services" name="initiative_object" multiple>
+                    <option value="" disabled selected>Choose</option>
+                    {% for goods in goods_services[0].initiative_object %}
+                        <option value="{{goods}}" selected>{{goods}}</option>
+                    {% endfor %}
+                </select>
+                <label>What can you find there?</label>
+            </div>
+        </div>
+
+        <!--Objects images-->
+        <div class="row">
+            <img id="form-img" src="{{ url_for('static', filename='img/bikes.png') }}" alt="{{ initiative_object }}">
+            <img id="form-img" src="{{ url_for('static', filename='img/books.png') }}" alt="{{ initiative_object }}">
+            <img id="form-img" src="{{ url_for('static', filename='img/clothes.png') }}" alt="{{ initiative_object }}">
+            <img id="form-img" src="{{ url_for('static', filename='img/home.png') }}" alt="{{ initiative_object }}">
+            <img id="form-img" src="{{ url_for('static', filename='img/music.png') }}" alt="{{ initiative_object }}">
+            <img id="form-img" src="{{ url_for('static', filename='img/electronics.png') }}" alt="{{ initiative_object }}">
+        </div>
+
+        <!--Initiative Description-->
+        <div class="row">
+            <div class="input-field">
+                <label for="initiative_description">Initiattive Description:</label>
+                <input class="form-control border border-dark" type="text" name="initiative_description" id="initiative_description" value="{{circular_initiative.initiative_description}}">
+            </div>
+        </div>
+
+        <!--weblink-->
+        <div class="row">
+            <div class="input-field">
+                <label for="weblink">Website:</label>
+                <input class="form-control border border-dark" type="text" name="weblink" id="weblink" value="{{circular_initiative.weblink}}">
+            </div>
+        </div>
 
     </div>
-</div>
+    <!--Submit Button-->
+    <div class="row">
+        <div class="text-center">
+            <input class="btn btn-success" type="submit" value="Save Changes">
+        </div>
+    </div>
+
+</form>
+
 
 
 

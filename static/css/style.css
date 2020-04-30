@@ -60,6 +60,7 @@ nav .brand-logo {
 h1#title {
     font-family: 'Bebas Neue', cursive;
     margin: 250px 0 0; 
+    text-align: center
 }
 
 #search-box {
@@ -136,14 +137,15 @@ button#search-btn {
 
 #init-object {
     position: absolute;
-    bottom: 10%;
-    padding: 10px 0 10px 40px;
+    bottom: 15%;
+    padding: 0;
+    margin: 10px 15px;
 }
 
 .chip {
     min-height: 32px;
     min-width: 60px;
-    margin: 10px 10px;
+    margin: 5px 0;
 }
 
 .chip>img {
@@ -152,10 +154,41 @@ button#search-btn {
     border-radius: 0;
 }
 
-#weblink {
+#website {
     bottom: 0;
     font-size: 16px;
-    padding: 20px;
+    padding: 30px;
     position: absolute;
     color: teal;
 }
+
+/*-------------Add and Edit form page----*/
+
+h1#add-init {
+    font-family: 'Bebas Neue', cursive;
+    margin: 100px 0 20px; 
+    text-align: center
+}
+
+p#add-init {
+    text-align: center;
+    margin: 0 100px 100px;
+}
+
+
+#form-style {
+    text-align: center;
+    min-height: 600px; 
+    margin: 0 20%; 
+}
+
+#form-img {
+    height: 50px;
+    margin: 10px;
+}
+
+.row {
+    margin: 80px;
+}
+
+
