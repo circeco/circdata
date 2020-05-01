@@ -20,6 +20,7 @@ body {
     border-radius: 0px;
 }
 
+
 nav ul a, nav .brand-logo {
     color: black;
     max-height: 64px;
@@ -27,9 +28,17 @@ nav ul a, nav .brand-logo {
     font-family: 'Bebas Neue', cursive; 
 }
 
+.mobile-nav {
+    font-size: 20px !important;
+}
+
+.side-nav {
+    width: 200px;
+}
+
 nav .brand-logo {
     font-family: 'Bebas Neue', cursive; 
-    margin-right: 18px;
+    margin-right: 10px;
 }
 
 #logo {
@@ -44,7 +53,6 @@ nav .brand-logo {
     transform: scale(0.9, 0.9);
 }
 
-
 .underline {
     margin: 0;
     text-decoration-line: underline;
@@ -54,12 +62,16 @@ nav .brand-logo {
     text-decoration-skip: ink;
 }
 
+.row {
+    margin: 80px;
+}
+
 
 /*-----------------Index.html*/
 
 h1#title {
     font-family: 'Bebas Neue', cursive;
-    margin: 250px 0 0; 
+    margin: 200px 0 0; 
     text-align: center
 }
 
@@ -73,24 +85,8 @@ h1#title {
 
 #search-btn {
     height: 50px;
+    min-width: 140px;
     font-size: 18px;
-}
-
-
-
-
-
-#red-wood {
-    background: url("../img/red-wood.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 200px;
-    width: 100%;
-    overflow: hidden;
-    margin: 0;
-    background-attachment: fixed;
-    top: 100%;
 }
 
 
@@ -115,7 +111,7 @@ h1#title {
 
 .card {
     width: 300px;
-    height: 500px;
+    height: 400px;
     margin: 5% auto;
 }
 
@@ -171,6 +167,10 @@ h1#title {
     background-color: #FF5252;
 }
 
+.modal-content {
+    font-size: 18px; 
+}
+
 /*-------------Add and Edit form page----*/
 
 h1#add-init {
@@ -196,24 +196,51 @@ p#add-init {
     margin: 10px;
 }
 
-.row {
-    margin: 80px;
-}
 
 /*----------------footer--*/
+
+#red-wood {
+    background: url("../img/red-wood.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    background-attachment: fixed;
+    top: 100%;
+    text-align: center;
+}
+
+#author, #author a {
+    font-size: 14px;
+    word-spacing: 2px;
+    color: white;
+    text-decoration: none;
+}
+
+#author {
+    margin-top: 10%;
+}
+
+#author a:hover {
+    text-decoration: none;
+    color: #134f5cff;
+    cursor: pointer;
+}
 
 .social-links a {
     padding:0;
     margin: 0%;
-    float: right;
 }
 
-.social-links li a i:hover {
+.social-links a i:hover {
     background: #134f5cff;
     color: #fafafa;
 }
 
-.social-links li a i {
+.social-links a i {
     width: 32px;
     height: 32px;
     padding: 12px 0;
@@ -230,3 +257,15 @@ p#add-init {
     box-shadow: 0 8px 8px 0px rgba(0, 0, 0, 0.19);
 }
 
+
+/*-----------mobile view--*/
+
+@media screen and (max-width: 450px){
+    .row {margin: 40px 10px}
+    h1#title {margin: 100px 0 0; font-size: 50px}
+    #red-wood {height: 100px}
+    #form-style {margin: 10%}
+    h1#add-init {font-size: 40px; margin: 20% 5% 10%}
+    p#add-init {font-size: 20px; margin: 0 5% 20%}
+    #logo {margin: 5px}
+}

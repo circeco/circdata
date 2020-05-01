@@ -5,7 +5,7 @@
         <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <script src="https://kit.fontawesome.com/d32fba75b2.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
 
@@ -21,12 +21,10 @@
                             <li><a href="{{url_for('add_initiative')}}">| &nbsp; &nbsp; Add</a></li>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
-                            <li><a class="sidenav-close" href="{{url_for('home')}}"><i class="material-icons"></i></a></li>
                             <li><a href="{{ url_for('static', filename='img/navbar_logo.jpg')}}" class="logo"></a></li>
-                            <li>Circular Initiative</li>
-                            <li><a href="{{url_for('home')}}">Search</a></li>
-                            <li><a href="{{url_for('get_circular_initiative')}}">View</a></li>
-                            <li><a href="{{url_for('add_initiative')}}">Add</a></li>
+                            <li><a href="{{url_for('home')}}" class="mobile-nav">Search</a></li>
+                            <li><a href="{{url_for('get_circular_initiative')}}" class="mobile-nav">View</a></li>
+                            <li><a href="{{url_for('add_initiative')}}" class="mobile-nav">Add</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -53,20 +51,17 @@
 
         <footer>
             <div id="red-wood">
-                <ul class="social-links">
-                    <li>
-                        <a target="_blank" href="https://github.com/circeco">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <span class="sr-only">GitHub</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a target="_blank" href="https://www.linkedin.com/in/circeco/">
-                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-                            <span class="sr-only">LinkedIn</span>
-                        </a>
-                    </li>
-                </ul>
+                <p id="author" class="social-links">@copyright 2020 circeco.org - Made by 
+                    <a href="https://circeco.github.io/Piero_resume/" target=”_blank”>PieroGrilli</a>
+                    <a target="_blank" href="https://www.linkedin.com/in/circeco/">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        <span class="sr-only">LinkedIn</span>
+                    </a>
+                    <a target="_blank" href="https://github.com/circeco">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span class="sr-only">GitHub</span>
+                    </a>
+                </p>
             </div>
         </footer>
         
@@ -74,6 +69,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
         <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 
-    
     </body>
 </html>
