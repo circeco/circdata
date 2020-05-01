@@ -30,6 +30,11 @@ nav ul a, nav .brand-logo {
 
 .mobile-nav {
     font-size: 20px !important;
+    opacity: 0.9;
+}
+
+#sidenav-overlay {
+    position: unset;
 }
 
 .side-nav {
