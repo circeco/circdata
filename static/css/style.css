@@ -273,4 +273,5 @@ p#add-init {
     h1#add-init {font-size: 40px; margin: 20% 5% 10%}
     p#add-init {font-size: 20px; margin: 0 5% 20%}
     #logo {margin: 5px}
+    nav .button-collapse {margin: 0 5px}
 }
