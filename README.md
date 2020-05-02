@@ -5,13 +5,14 @@ mockup image
 User story
 
 ## Table of Content
-<a name="1. UX"/>
-<a name="2. Features"/>
-<a name="3. Technology Used"/>
-<a name="4. Database Schema"/>
-<a name="4. Testing"/>
-<a name="5. Deployment"/>
-<a name="6. Credits"/>
+[### UX] (1. UX)
+[### Features] (2. Features)
+[### Technology Used] (3. Technology Used)
+[### Database Schema] (4. Database Schema)
+[### Testing] (5.Testing)
+[### Deployment] (6. Deployment)
+[### Credits] (7. Credits)
+
 
 ### 1. UX 
 
