@@ -67,6 +67,7 @@ I have not used any program to make my wireframe but I have rather made a hand s
 
 ##### back to [top](#table-of-contents)
 
+---
 
 ## 2. Features
 Some extra featuers were added in this app as not part of requirements because made the project more useful for better user interaction. 
@@ -96,6 +97,8 @@ In the future, I would like to create to possibility for the user to create thei
 
 ##### back to [top](#table-of-contents)
 
+---
+
 ## 3. Technology Used
 [GitHub](https://github.com/) is been used as a storage of my code and as my primary IDE for coding. 
 
@@ -120,10 +123,18 @@ In the future, I would like to create to possibility for the user to create thei
 
 ##### back to [top](#table-of-contents)
 
+---
+
 ## 4. Database schema 
+[MongoDB](https://www.mongodb.com/) is the main database used for this app. 
+This is a non-relational DB, which worked well for the app because each document can store enough information for each circular initiative. Three collections were created within the app's database: 
+- **Circular_Initiative** which contains information of the circular initiatives added by users 
+- **Categories** which contains a prexisting selections of initiatives type such as Reuse, Recycle and Repair initiatives so they can be prefixed options for the user when adding or editing an initiative 
+- **Goods_Services** is another prefixed selections of options that the user can choose among when create or edit an initiative but it also serves as the base for the sorting functionality which gives the user quick access to a selection of related goods or services
 
 
 ## 5. Testing 
+
 
 
 ## 6. Deployment 
