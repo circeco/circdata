@@ -31,13 +31,13 @@ I have interest and knowledge in sustaianblity, so I wanted to create a platform
 ### User Stories 
 Below here there would be list of implemented features and functionalities available to the user. 
 As a user I would like to: 
-- view the site from my mobile, tablet or desktop
-- Search specific circular initiatives 
-- View all Circular initiatives
-- Edit info about a circular initiative 
-- Delite a circular initiative 
-- Add a new circular initiative 
-- Click on the link of each circular initiative for more info on their own webpage 
+* view the site from my mobile, tablet or desktop
+* Search specific circular initiatives 
+* View all Circular initiatives
+* Edit info about a circular initiative 
+* Delite a circular initiative 
+* Add a new circular initiative 
+* Click on the link of each circular initiative for more info on their own webpage 
 
 
 ### Design
@@ -45,24 +45,24 @@ The design goal was to create a sleek and clear user interface, with focus on im
 
 #### External Dependency 
 Several elements in the design rely on external dependency that are below listed: 
-- [Materialize 1.0.2](https://materializecss.com/) I enjoyed using Materialize modern and professional-looking layout as a framework and the documentation was simple and clear for implementation with the ready-to-use codes
-- [Google Font](https://fonts.google.com/) the font-family used have lettersforms that are dynamic, designed for a modular system with a good balancing and that avoide repetitiviness. Their styles are suatable for headlines, short paragraphs or single word, which is what this site is mostly made of 
+* [Materialize 1.0.2](https://materializecss.com/) I enjoyed using Materialize modern and professional-looking layout as a framework and the documentation was simple and clear for implementation with the ready-to-use codes
+* [Google Font](https://fonts.google.com/) the font-family used have lettersforms that are dynamic, designed for a modular system with a good balancing and that avoide repetitiviness. Their styles are suatable for headlines, short paragraphs or single word, which is what this site is mostly made of 
   - [Khand](https://fonts.google.com/specimen/Khand?query=khand) 
   - [Bebas Neue](https://fonts.google.com/?query=Bebas+Neue)
-- [Font Awesome 5.8.1](https://fontawesome.com/) Social Icon in the footer cannot be found in Materialize so Font Awesome can provide icons for more specific needs 
+* [Font Awesome 5.8.1](https://fontawesome.com/) Social Icon in the footer cannot be found in Materialize so Font Awesome can provide icons for more specific needs 
 
 #### Color 
 The use of colors is kept at a minimum that apart from the use of black and white, with also the employment of a type of red to highlight and catch attention and a type of green/blue in a different shade to represent different levels of circularity. This is also a reminder of the logo and of the sustainability theme often associated with green. The red color is also a reminder of the state of environmental emergency and the action to take. The colors employed and the font together create a specific custom theme recognizable among another website. 
 
 #### other Frameworks
-[Flask 1.0.2](http://flask.pocoo.org/)
+* [Flask 1.0.2](http://flask.pocoo.org/)
 This microframework is used to render the back-end Python with the Front-End Materialize.
 
-[jQuery 3.2.1](https://code.jquery.com/jquery/)
+* [jQuery 3.2.1](https://code.jquery.com/jquery/)
 This framework is very useful to keep the JS coding at minimum so can be used as fundation of my scripts. 
 
 #### Wireframes
-I have not used any program to make my wireframe but hand sketch [here]().
+I have not used any program to make my wireframe but I have rather made a hand sketch [here](https://github.com/circeco/circdata/blob/master/static/img/circdata-sketch.jpg).
 
 
 ##### back to [top](#table-of-contents)
@@ -73,7 +73,7 @@ Some extra featuers were added in this app as not part of requirements because m
 
 ### Existing
 **Search for Circular Initiatives**
-- The user can immediately search for Circular Initiative on the home page and can search for any type of word whether is the name of the initiative, something in the description, the type of initiative (Reuse, Reccyle, Repair) or a type of object sold, to donate or to repair (books, music, clothes, bikes or home stuff). 
+The user can immediately search for Circular Initiative on the home page and can search for any type of word whether is the name of the initiative, something in the description, the type of initiative (Reuse, Reccyle, Repair) or a type of object sold, to donate or to repair (books, music, clothes, bikes or home stuff). 
 
 **CRUD View All Circular Initiatives**
 All initiatives can be diplayed all together on any devices mobile to computer mantaining clarity and easy access. 
@@ -100,10 +100,10 @@ In the future, I would like to create to possibility for the user to create thei
 [GitHub](https://github.com/) is been used as a storage of my code and as my primary IDE for coding. 
 
 ### Front End Technologies
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) 
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) 
-- [jQuery 3.2.1](https://code.jquery.com/jquery/) 
-- [Materialize 1.0.2](https://materializecss.com/) 
+* [HTML](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) 
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3) 
+* [jQuery 3.2.1](https://code.jquery.com/jquery/) 
+* [Materialize 1.0.2](https://materializecss.com/) 
 
 ### Back End Technologies
 
