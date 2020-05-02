@@ -8,7 +8,7 @@ User story
 1. [**UX**](#ux)
 2. [**Features**](#features)
 3. [**Technologies Used**](#technologies-used)
-4. [**Database Schema**](#Database Schema)
+4. [**Database Schema**](#Database-schema)
 5. [**Testing**](#testing)
 6. [**Deployment**](#deployment)
 7. [**Credits**](#credits)
