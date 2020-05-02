@@ -25,7 +25,7 @@ nav ul a, nav .brand-logo {
     color: black;
     max-height: 64px;
     font-size: 20px;
-    font-family: 'Bebas Neue', cursive; 
+    font-family: 'Bebas Neue', sans-serif; 
 }
 
 .mobile-nav {
@@ -42,7 +42,7 @@ nav ul a, nav .brand-logo {
 }
 
 nav .brand-logo {
-    font-family: 'Bebas Neue', cursive; 
+    font-family: 'Bebas Neue', sans-serif; 
     margin-right: 10px;
 }
 
@@ -75,7 +75,7 @@ nav .brand-logo {
 /*-----------------Index.html*/
 
 h1#title {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     margin: 200px 0 0; 
     text-align: center
 }
@@ -125,7 +125,7 @@ h1#title {
 }
 
 .card-title {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     padding: 30px 20px;
 }
 
@@ -183,7 +183,7 @@ h1#title {
 /*-------------Add and Edit form page----*/
 
 h1#add-init {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'Bebas Neue', sans-serif;
     margin: 100px 0 20px; 
     text-align: center
 }
