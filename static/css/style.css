@@ -129,6 +129,10 @@ h1#title {
     padding: 30px 20px;
 }
 
+#modal-title {
+    padding: 0 0 30px;
+}
+
 #initiative-type {
     text-align: right;
     color: white;
