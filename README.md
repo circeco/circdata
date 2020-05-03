@@ -204,6 +204,7 @@ initiative_object: <array>
 2- Create a **Procfile** that comunicate to Heroku the type of application being deployed and so understand how to run it `echo web: python run.py > Procfile`
 3- Log in or sign up for an Heroku account and create a project app, then click on the deploy tab and use the connect GitHub as deployment method and choose Automatic Deployment
 4- In the setting tab, click on Reveal Config Vars and configure environmental variables as follows:
+
     - **IP** : `0.0.0.0`
     - **PORT** : `8080`
     - **MONGO_URI** : `<link to your Mongo DB>`
@@ -211,6 +212,7 @@ initiative_object: <array>
     - **MY_ADDRESS** : `<your own email address>`
     - **SEND_TO** : `<recipient email address>`
     - **PASSWORD** : `<you own email password>`
+
 5- Now the app should be successfully deployed through Heroku
 
 ### Pushing To The Respository:
