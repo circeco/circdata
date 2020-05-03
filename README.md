@@ -49,12 +49,6 @@ Several elements in the design rely on external dependency that are below listed
 
 #### Color 
 The use of colors is kept at a minimum that apart from the use of black and white, with also the employment of a type of red to highlight and catch attention and a type of green/blue in a different shade to represent different levels of circularity. This is also a reminder of the logo and of the sustainability theme often associated with green. The red color is also a reminder of the state of environmental emergency and the action to take. The colors employed and the font together create a specific custom theme recognizable among another website. 
-- ![#000000](http://archives.materializecss.com/0.100.2/color.html) `#000000` (**Black** - *main color*)
-- ![#fafafa](http://archives.materializecss.com/0.100.2/color.html) `#fafafa` (**White** - *main color*)
-- ![#FF5252](http://archives.materializecss.com/0.100.2/color.html) `#FF5252` (**Red** - *theme color*)
-- ![#006064](http://archives.materializecss.com/0.100.2/color.html) `#006064` (**Dark Green** - *logo and primary color*)
-- ![#00838f](http://archives.materializecss.com/0.100.2/color.html) `#00838f` (**Green** - *logo and primary color*)
-- ![#0097a7](http://archives.materializecss.com/0.100.2/color.html) `#0097a7` (**LighterGreen** - *logo and primary color*)
 
 #### other Frameworks
 * [Flask 1.0.2](http://flask.pocoo.org/)
