@@ -221,11 +221,6 @@ initiative_object: <array>
 2. git commit -m "Leave a message here"
 3. git push origin master - (which is for the master branch).
 
-- To create a new branch within your current application, open a New Terminal:
-1. Create a branch: git checkout -b new-branch-name
-2. Edit, add to your application and commit the files.
-3. Push the branch to the remote repository: git push origin new-branch-name.
-
 ##### back to [top](#table-of-contents)
 
 ---
