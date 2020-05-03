@@ -1,6 +1,6 @@
 # [CIRCDATA](https://circeco-contribuite.herokuapp.com/)
 
-![circdata](https://f1c7ba75-3b68-4344-8aed-babe026b04a1.ws-eu01.gitpod.io/files/download/?id=48a5bcd0-12dc-4ee1-bfc3-cf65454beb22)
+![circdata](https://github.com/circeco/circdata/blob/d807fe233f9ad8dfbb9234a9139c0f9e9a97b32c/static/img/mockup.png)
 
 Do you wanna contribuite to a sustaianble future? Circeco is the platform for circular economy where to find shops that sell and accept recycled and reuse stuff or also where you can repair your own stuff! You can search for second hand shops for music, books, clothes, electronics and home stuff with the scope of give good hints on what good sustainable initiatives are available out there! You can also add unlimited circular initiatives to share with the community and contribuiting to build a circular ecosystem! 
 
