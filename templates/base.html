@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <META CHARSET="UTF-8">
+        <title>a webapp for sustainability</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
         <script src="https://kit.fontawesome.com/d32fba75b2.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <META NAME="CIRCDATA" CONTENT="Long headed application">
     </head>
     <body>
 
@@ -14,9 +17,9 @@
                 <nav>
                     <div class="nav-wrapper white">
                         <a href="{{url_for('home')}}" class="right brand-logo">circeco.org</a>
-                        <a href="{{url_for('home')}}" data-activates="mobile-demo" class="button-collapse"><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}"></a>
+                        <a href="{{url_for('home')}}" data-activates="mobile-demo" class="button-collapse"><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}" alt="text"></a>
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <li><a href="{{url_for('home')}}"><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}"></a></li>
+                            <li><a href="{{url_for('home')}}"><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}" alt="text"></a></li>
                             <li><a href="{{url_for('get_circular_initiative')}}">Circular Initiative</a></li>
                             <li><a href="{{url_for('add_initiative')}}">| &nbsp; &nbsp; Add</a></li>
                         </ul>
@@ -31,23 +34,8 @@
             </div>
         </header>
 
-
-        <section class="cover_section">
-
-        </section>
-
-        <section class="search_section">
-
-        </section>
-
-        <section class="view_section">
-            {% block content %}
-            {% endblock %}
-        </section>
-
-        <section class="add_section">
-
-        </section>
+        {% block content %}
+        {% endblock %}
 
         <footer>
             <div id="red-wood">
