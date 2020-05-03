@@ -17,7 +17,7 @@
         <div class="row">
             <div class="input-field">
                 <select class="form-control border border-dark" name="initiative_type" id="initiative_type">
-                    <option value="" disabled selected>Choose Initiative Type</option>
+                    <option value="" disabled>Choose Initiative Type</option>
                     {% for type in categories %}
                         {% if circular_initiative.initiative_type == type.initiative_type %}
                             <option value="{{ type.initiative_type }}" selected>{{ type.initiative_type }}</option>
@@ -45,12 +45,12 @@
 
         <!--Objects images-->
         <div class="row">
-            <img id="form-img" src="{{ url_for('static', filename='img/bikes.png') }}" alt="{{ initiative_object }}">
-            <img id="form-img" src="{{ url_for('static', filename='img/books.png') }}" alt="{{ initiative_object }}">
-            <img id="form-img" src="{{ url_for('static', filename='img/clothes.png') }}" alt="{{ initiative_object }}">
-            <img id="form-img" src="{{ url_for('static', filename='img/home.png') }}" alt="{{ initiative_object }}">
-            <img id="form-img" src="{{ url_for('static', filename='img/music.png') }}" alt="{{ initiative_object }}">
-            <img id="form-img" src="{{ url_for('static', filename='img/electronics.png') }}" alt="{{ initiative_object }}">
+            <img class="form-img" src="{{ url_for('static', filename='img/bikes.png') }}" alt="{{ initiative_object }}">
+            <img class="form-img" src="{{ url_for('static', filename='img/books.png') }}" alt="{{ initiative_object }}">
+            <img class="form-img" src="{{ url_for('static', filename='img/clothes.png') }}" alt="{{ initiative_object }}">
+            <img class="form-img" src="{{ url_for('static', filename='img/home.png') }}" alt="{{ initiative_object }}">
+            <img class="form-img" src="{{ url_for('static', filename='img/music.png') }}" alt="{{ initiative_object }}">
+            <img class="form-img" src="{{ url_for('static', filename='img/electronics.png') }}" alt="{{ initiative_object }}">
         </div>
 
         <!--Initiative Description-->
@@ -79,9 +79,5 @@
     </div>
 
 </form>
-
-
-
-
 
 {% endblock %}

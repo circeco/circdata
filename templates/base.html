@@ -17,9 +17,9 @@
                 <nav>
                     <div class="nav-wrapper white">
                         <a href="{{url_for('home')}}" class="right brand-logo">circeco.org</a>
-                        <a href="{{url_for('home')}}" data-activates="mobile-demo" class="button-collapse"><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}" alt="text"></a>
+                        <a href="{{url_for('home')}}" data-activates="mobile-demo" class="button-collapse"><img class="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}" alt="text"></a>
                         <ul id="nav-mobile" class="left hide-on-med-and-down">
-                            <li><a href="{{url_for('home')}}"><img id="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}" alt="text"></a></li>
+                            <li><a href="{{url_for('home')}}"><img class="logo" src="{{ url_for('static', filename='img/navbar_logo.jpg')}}" alt="text"></a></li>
                             <li><a href="{{url_for('get_circular_initiative')}}">Circular Initiative</a></li>
                             <li><a href="{{url_for('add_initiative')}}">| &nbsp; &nbsp; Add</a></li>
                         </ul>

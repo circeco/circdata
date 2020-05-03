@@ -6,11 +6,11 @@
     <div id="initiative-type-list" class="list-group text-center">
         <a href="{{ url_for('initiative_by_object') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="show-all"><strong>Show All</strong></a>
         <a href="{{ url_for('sort', keyword='music') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Music</strong></a>
-        <a href="{{ url_for('sort', keyword='books') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Books</strong></a>
-        <a href="{{ url_for('sort', keyword='clothes') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Clothes</strong></a>
-        <a href="{{ url_for('sort', keyword='bikes') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Bikes</strong></a>
-        <a href="{{ url_for('sort', keyword='home') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Home</strong></a>
-        <a href="{{ url_for('sort', keyword='electronics') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="music"><strong>Electronics</strong></a>
+        <a href="{{ url_for('sort', keyword='books') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="books"><strong>Books</strong></a>
+        <a href="{{ url_for('sort', keyword='clothes') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="clothes"><strong>Clothes</strong></a>
+        <a href="{{ url_for('sort', keyword='bikes') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="bikes"><strong>Bikes</strong></a>
+        <a href="{{ url_for('sort', keyword='home') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="home"><strong>Home</strong></a>
+        <a href="{{ url_for('sort', keyword='electronics') }}" class="list-group-item list-group-item-action btn btn-secondary bg-dark" id="electronics"><strong>Electronics</strong></a>
     </div>
 
 
@@ -19,18 +19,18 @@
         <div class="card z-depth-5">
             <div class="card-content">
                 <span class="card-title activator grey-text text-darken-4">{{circular.initiative_name}}<i class="material-icons right">more_vert</i></span>
-                <!--------------different color for different type of initiative-->
+                <!--different color for different type of initiative-->
                 <div style="padding: 0">
                 {% if circular.initiative_type == 'Reuse' %}
-                    <p id="initiative-type" class="cyan darken-4">{{ circular.initiative_type }}</p>
+                    <p class="cyan darken-4 initiative-type">{{ circular.initiative_type }}</p>
                 {% elif circular.initiative_type == 'Repair' %}
-                    <p id="initiative-type" class="cyan darken-3">{{ circular.initiative_type }}</p>
+                    <p class="cyan darken-3 initiative-type">{{ circular.initiative_type }}</p>
                 {% elif circular.initiative_type == 'Recycle' %}
-                    <p id="initiative-type" class="cyan darken-2">{{ circular.initiative_type }}</p>
+                    <p class="cyan darken-2 initiative-type">{{ circular.initiative_type }}</p>
                 {% endif %}
                 </div>
-                <p id="init-description">{{circular.initiative_description}}</p>
-                <div id="init-object">
+                <p class="init-description">{{circular.initiative_description}}</p>
+                <div class="init-object">
                     {% for initiative_object in circular.initiative_object %}
                         <div class="chip">
                             <img src="{{ url_for('static', filename='img/'+initiative_object|lower+'.png') }}" alt="{{ initiative_object }}">
@@ -38,13 +38,13 @@
                         </div>
                     {% endfor %}
                 </div>
-                <p><a id="website" target="_blank" href="https://{{circular.weblink}}">{{circular.weblink}}</a></p>
+                <p><a class="website" target="_blank" href="https://{{circular.weblink}}">{{circular.weblink}}</a></p>
             </div>
             <div class="card-reveal">
-                <span id="modal-title" class="card-title grey-text text-darken-4">{{circular.initiative_name}}<i class="material-icons right">close</i></span>
-                <a id="edit-btns" href="{{ url_for('edit_initiative', initiative_id=circular._id) }}" class="waves-effect waves-light btn">Edit</a>
+                <span class="card-title grey-text text-darken-4 modal-title">{{circular.initiative_name}}<i class="material-icons right">close</i></span>
+                <a class="waves-light btn modal-trigger edit-btns" href="{{ url_for('edit_initiative', initiative_id=circular._id) }}">Edit</a>
                 <!-- Modal Trigger -->
-                <a id="edit-btns" class="waves-effect waves-light btn modal-trigger" href="#modal{{circular._id}}">Delete</a>
+                <a class="waves-light btn modal-trigger delete-btns" href="#modal{{circular._id}}">Delete</a>
             </div>
             <!-- Modal Structure -->
             <div id="modal{{circular._id}}" class="modal modal-close">
@@ -53,7 +53,7 @@
                     <p>Please note that this action would be irreversible and info for this initiative would be lost!</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="{{ url_for('delete_initiative', circular_initiative_id=circular._id) }}" class="modal-close waves-effect waves-green btn-flat">YES, I am sure</a>
+                    <a href="{{ url_for('delete_initiative', circular_initiative_id=circular._id) }}" class="modal-close waves-green btn-flat">YES, I am sure</a>
                 </div>
             </div>
         </div>

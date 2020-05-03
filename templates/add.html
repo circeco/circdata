@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1 id="add-init" class="underline">+ Add Circular Initiative</h1>
-<p id="add-init">Do you know a place or people that have principles of circular economy as their core values for their business or activity? Contribute to build a circular ecosystem!</p>
+<h1 class="add-init underline">+ Add Circular Initiative</h1>
+<p class="add-init">Do you know a place or people that have principles of circular economy as their core values for their business or activity? Contribute to build a circular ecosystem!</p>
 
 <form id="form-style" action="{{ url_for('insert_initiative') }}" method="POST"  class="col s12">
 
@@ -9,7 +9,7 @@
         <div class="input-field">
             <i class="material-icons prefix">all_inclusive</i>
             <input id="initiative_name" name="initiative_name" type="text" data-length="30" required>
-            <label for="icon_prefix">Initiative Name</label>
+            <label>Initiative Name</label>
         </div>
     </div>
 
@@ -31,27 +31,27 @@
         <h5 class="col s6">What can you find there?</h5>
         <div class="input-field col s6">
             <select id="goods_services" name="initiative_object" multiple>
-                <option value="" disabled selected>Choose</option>
+                <option value="" disabled>Choose</option>
                 {% for goods in goods_services[0].initiative_object %}
-                    <option value="{{goods}}" required>{{goods}}</option>
+                    <option value="{{goods}}">{{goods}}</option>
                 {% endfor %}
             </select>
         </div>
     </div>
     <div class="row">
-        <img id="form-img" src="{{ url_for('static', filename='img/bikes.png') }}" alt="{{ initiative_object }}">
-        <img id="form-img" src="{{ url_for('static', filename='img/books.png') }}" alt="{{ initiative_object }}">
-        <img id="form-img" src="{{ url_for('static', filename='img/clothes.png') }}" alt="{{ initiative_object }}">
-        <img id="form-img" src="{{ url_for('static', filename='img/home.png') }}" alt="{{ initiative_object }}">
-        <img id="form-img" src="{{ url_for('static', filename='img/music.png') }}" alt="{{ initiative_object }}">
-        <img id="form-img" src="{{ url_for('static', filename='img/electronics.png') }}" alt="{{ initiative_object }}">
+        <img class="form-img" src="{{ url_for('static', filename='img/bikes.png') }}" alt="{{ initiative_object }}">
+        <img class="form-img" src="{{ url_for('static', filename='img/books.png') }}" alt="{{ initiative_object }}">
+        <img class="form-img" src="{{ url_for('static', filename='img/clothes.png') }}" alt="{{ initiative_object }}">
+        <img class="form-img" src="{{ url_for('static', filename='img/home.png') }}" alt="{{ initiative_object }}">
+        <img class="form-img" src="{{ url_for('static', filename='img/music.png') }}" alt="{{ initiative_object }}">
+        <img class="form-img" src="{{ url_for('static', filename='img/electronics.png') }}" alt="{{ initiative_object }}">
     </div>
 
     <div class="row">        
         <div class="input-field">
             <i class="material-icons prefix">subject</i>
             <textarea name="initiative_description" id="initiative_description" class="materialize-textarea" data-length="120" required></textarea>
-            <label for="icon_telephone">Description</label>
+            <label>Description</label>
         </div>
     </div>
 
@@ -59,7 +59,7 @@
         <div class="input-field">
             <i class="material-icons prefix">all_inclusive</i>
             <input id="weblink" placeholder="www.circeco.org" name="weblink" type="text" data-length="50" required>
-            <label for="icon_prefix">website</label>
+            <label>website</label>
         </div>
     </div>
 

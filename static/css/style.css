@@ -46,7 +46,7 @@ nav .brand-logo {
     margin-right: 10px;
 }
 
-#logo {
+.logo {
     height: 45px;
     width: 45px;
     margin: 8px;
@@ -54,7 +54,7 @@ nav .brand-logo {
     border-radius: .25rem;
 }
 
-#logo:hover {
+.logo:hover {
     transform: scale(0.9, 0.9);
 }
 
@@ -129,23 +129,23 @@ h1#title {
     padding: 30px 20px;
 }
 
-#modal-title {
+.modal-title {
     padding: 0 0 30px;
 }
 
-#initiative-type {
+.initiative-type {
     text-align: right;
-    color: white;
+    color: white !important;
     padding: 5%;
     margin-bottom: 10px;
 }
 
-#init-description {
+.init-description {
     font-size: 16px;
     padding: 10px 20px;
 }
 
-#init-object {
+.init-object {
     position: absolute;
     bottom: 15%;
     padding: 0;
@@ -164,7 +164,7 @@ h1#title {
     border-radius: 0;
 }
 
-#website {
+.website {
     bottom: 0;
     font-size: 16px;
     padding: 30px;
@@ -172,7 +172,7 @@ h1#title {
     color: teal;
 }
 
-#edit-btns {
+.edit-btns, .delete-btns {
     background-color: #FF5252;
 }
 
@@ -182,13 +182,13 @@ h1#title {
 
 /*-------------Add and Edit form page----*/
 
-h1#add-init {
+h1.add-init {
     font-family: 'Bebas Neue', sans-serif;
     margin: 100px 0 20px; 
     text-align: center
 }
 
-p#add-init {
+p.add-init {
     text-align: center;
     margin: 0 20% 100px;
 }
@@ -200,7 +200,7 @@ p#add-init {
     margin: 0 20%; 
 }
 
-#form-img {
+.form-img {
     height: 50px;
     margin: 10px;
 }
@@ -274,8 +274,8 @@ p#add-init {
     h1#title {margin: 100px 0 0; font-size: 50px}
     #red-wood {height: 100px}
     #form-style {margin: 10%}
-    h1#add-init {font-size: 40px; margin: 20% 5% 10%}
-    p#add-init {font-size: 20px; margin: 0 5% 20%}
-    #logo {margin: 5px}
+    h1.add-init {font-size: 40px; margin: 20% 5% 10%}
+    p.add-init {font-size: 20px; margin: 0 5% 20%}
+    .logo {margin: 5px}
     nav .button-collapse {margin: 0 5px}
 }
