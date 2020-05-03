@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId 
+from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
 
@@ -12,7 +12,6 @@ app.config["MONGO_DBNAME"] = 'circdata'
 app.config["MONGO_URI"] = os.getenv('MONGO_URI')
 
 mongo = PyMongo(app)
-
 
 
 # Homepage
@@ -34,7 +33,7 @@ def search():
     return render_template("view.html", circular_initiative=results, count=results.count())
 
 
-# sort by object 
+# Sort by object 
 @app.route('/sort/<keyword>')
 def sort(keyword): 
     query = ( { "$text": { "$search": keyword } } )
@@ -42,20 +41,20 @@ def sort(keyword):
     return render_template("view.html", circular_initiative=results, count=results.count())
 
 
-# display results of the search
+# Display results of the search
 @app.route("/results/<result>")
 def results(result):
     return render_template("view.html", circular_initiative=result)
 
 
-# view circular initiatives
+# View circular initiatives
 @app.route('/get_circular_initiative')
 def get_circular_initiative():
     results = mongo.db.circular_initiative.find()
     return render_template("view.html", circular_initiative=results)
         
 
-# find initiative by object
+# Find initiative by object
 @app.route("/initiative_by_object", methods=["GET"])
 def initiative_by_object():
     a = mongo.db.circular_initiative.find({"initiative_object": {"$regex": '/A/i'}})
@@ -65,7 +64,7 @@ def initiative_by_object():
                                 ("initiative_object", 1)]))
 
 
-# add initiative form 
+# Add initiative form 
 @app.route('/add_initiative')
 def add_initiative():
     return render_template('add.html', 
@@ -74,7 +73,7 @@ def add_initiative():
                             goods_services=mongo.db.goods_services.find())
 
 
-# post a new initiative
+# Post a new initiative
 @app.route('/insert_initiative', methods=['POST'])
 def insert_initiative():
     submit = {
@@ -90,8 +89,7 @@ def insert_initiative():
     return redirect(url_for('get_circular_initiative'))
 
 
-
-# editing an initiative
+# Editing an initiative
 @app.route("/edit_initiative/<initiative_id>")
 def edit_initiative(initiative_id):
     the_initiative = mongo.db.circular_initiative.find_one({"_id": ObjectId(initiative_id)})
@@ -101,8 +99,7 @@ def edit_initiative(initiative_id):
                             categories=all_initiative_types, goods_services=all_goods_services)
 
 
-
-# updating initiative data
+# Updating initiative data
 @app.route('/update_initiative/<initiative_id>', methods=["POST"])
 def update_initiative(initiative_id):
     circular_initiative = mongo.db.circular_initiative
@@ -117,16 +114,11 @@ def update_initiative(initiative_id):
     return redirect(url_for('get_circular_initiative'))
 
 
-
-# delete initiative from database
+# Delete initiative from database
 @app.route("/delete_initiative/<circular_initiative_id>")
 def delete_initiative(circular_initiative_id):
     mongo.db.circular_initiative.remove({"_id": ObjectId(circular_initiative_id)})
     return redirect(url_for("get_circular_initiative"))
-
-
-
-
 
 
 if __name__ == '__main__':
